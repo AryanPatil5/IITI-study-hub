@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIT Indore Study Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>IIT Indore Study Hub</h1>
+        </div>
+        <nav>
+            <button id="githubLoginBtn">Login with GitHub</button>
+            <button id="logoutBtn" class="hidden">Logout</button>
+            <span id="userInfo" class="hidden">
+                <img id="userAvatar" src="" alt="User Avatar" class="avatar">
+                <span id="username"></span>
+            </span>
+            <button id="homeBtn" class="active">Home</button>
+            <button id="uploadBtn">Upload Materials</button>
+            <button id="myMaterialsBtn">My Materials</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search for materials...">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+            <select id="semesterFilter">
+                <option value="">All Semesters</option>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+            </select>
+            <select id="subjectFilter">
+                <option value="">All Subjects</option>
+                <option value="math">Mathematics</option>
+                <option value="physics">Physics</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="cs">Computer Science</option>
+                <option value="ee">Electrical Engineering</option>
+                <option value="me">Mechanical Engineering</option>
+            </select>
+            <select id="typeFilter">
+                <option value="">All Types</option>
+                <option value="notes">Notes</option>
+                <option value="assignment">Assignments</option>
+                <option value="quiz">Quiz Papers</option>
+                <option value="exam">Exam Papers</option>
+            </select>
+        </div>
+
+        <!-- Main Content Area -->
+        <div id="homeView">
+            <h2>Recent Materials</h2>
+            <div id="materialsList" class="materials-list">
+                <!-- Materials will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Upload Form -->
+        <div id="uploadView" class="hidden">
+            <h2>Upload Study Material</h2>
+            <form id="uploadForm">
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="semester">Semester:</label>
+                    <select id="semester" required>
+                        <option value="">Select Semester</option>
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+                        <option value="3">Semester 3</option>
+                        <option value="4">Semester 4</option>
+                        <option value="5">Semester 5</option>
+                        <option value="6">Semester 6</option>
+                        <option value="7">Semester 7</option>
+                        <option value="8">Semester 8</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <select id="subject" required>
+                        <option value="">Select Subject</option>
+                        <option value="math">Mathematics</option>
+                        <option value="physics">Physics</option>
+                        <option value="chemistry">Chemistry</option>
+                        <option value="cs">Computer Science</option>
+                        <option value="ee">Electrical Engineering</option>
+                        <option value="me">Mechanical Engineering</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="type">Type:</label>
+                    <select id="type" required>
+                        <option value="">Select Type</option>
+                        <option value="notes">Notes</option>
+                        <option value="assignment">Assignments</option>
+                        <option value="quiz">Quiz Papers</option>
+                        <option value="exam">Exam Papers</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="file">File:</label>
+                    <input type="file" id="file" required>
+                </div>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+
+        <!-- My Materials View -->
+        <div id="myMaterialsView" class="hidden">
+            <h2>My Uploaded Materials</h2>
+            <div id="myMaterialsList" class="materials-list">
+                <!-- User's materials will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Material Details View -->
+        <div id="materialDetailView" class="hidden">
+            <button id="backBtn">← Back to List</button>
+            <div id="materialDetail"></div>
+            <div class="comments-section">
+                <h3>Comments</h3>
+                <div id="commentsList"></div>
+                <div class="add-comment">
+                    <textarea id="commentText" placeholder="Add your comment..." rows="2"></textarea>
+                    <button id="addCommentBtn">Add Comment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 IIT Indore Study Hub | Created for Hackathon</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
